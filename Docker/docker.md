@@ -50,7 +50,7 @@ sudo systemctl restart docker
 
 最终查询结果为下：
 
-![image-20230407123646898](docker.assets/image-20230407123646898.png)
+![image-20230407123646898](docker.assets/image-20230407123646898-1681633613164.png)
 
 ## 3.Docker命令
 
@@ -76,15 +76,15 @@ https://www.runoob.com/docker/docker-command-manual.html
 搜索镜像:docker search 镜像名称
 ```
 
-![image-20230407134147107](docker.assets/image-20230407134147107.png)
+![image-20230407134147107](docker.assets/image-20230407134147107-1681633613166.png)
 
 - 管理镜像常用命令：
 
-![image-20230407135458406](docker.assets/image-20230407135458406.png)
+![image-20230407135458406](docker.assets/image-20230407135458406-1681633613166.png)
 
 - 管理容器常用命令
 
-![image-20230407135539928](docker.assets/image-20230407135539928.png)
+![image-20230407135539928](docker.assets/image-20230407135539928-1681633613166.png)
 
 ## 4.Docker容器的使用
 
@@ -102,7 +102,7 @@ https://www.runoob.com/docker/docker-command-manual.html
 - **ubuntu**: ubuntu 镜像。
 - **/bin/bash**：放在镜像名后的是命令，这里我们希望有个交互式 Shell，因此用的是 /bin/bash。
 
-![image-20230407142248364](docker.assets/image-20230407142248364.png)
+![image-20230407142248364](docker.assets/image-20230407142248364-1681633613166.png)
 
 (2).查看所有的容器命令如下：
 
@@ -116,17 +116,17 @@ $ docker ps -a
 
 概念：
 
-![image-20230407142657070](docker.assets/image-20230407142657070.png)
+![image-20230407142657070](docker.assets/image-20230407142657070-1681633613166.png)
 
-![image-20230407142711832](docker.assets/image-20230407142711832.png)
+![image-20230407142711832](docker.assets/image-20230407142711832-1681633613167.png)
 
 配置数据卷：
 
-![image-20230407143113865](docker.assets/image-20230407143113865.png)
+![image-20230407143113865](docker.assets/image-20230407143113865-1681633613167.png)
 
 数据卷容器：
 
-![image-20230407152308002](docker.assets/image-20230407152308002.png)
+![image-20230407152308002](docker.assets/image-20230407152308002-1681633613167.png)
 
 ## 6.Docker应用部署
 
@@ -160,7 +160,7 @@ docker run -id \
 -v $PWD/logs:/logs \
 -v $PWD/data:/var/lib/mysql \
 -e MYSQL_ROOT_PASSWORD=123456 \
-mysql:5.6
+mysql:8.0
 ```
 
 - 参数说明：
@@ -180,7 +180,7 @@ docker exec –it c_mysql /bin/bash
 
 5. 使用外部机器连接容器中的mysql
 
-![1573636765632](docker.assets/1573636765632.png)
+![1573636765632](docker.assets/1573636765632-1681633613167.png)
 
 
 
@@ -231,7 +231,7 @@ tomcat
 
 4. 使用外部机器访问tomcat
 
-![1573649804623](docker.assets/1573649804623.png)
+![1573649804623](docker.assets/1573649804623-1681633613167.png)
 
 
 
@@ -317,7 +317,7 @@ nginx
 
 4. 使用外部机器访问nginx
 
-![1573652396669](docker.assets/1573652396669-1680855742749.png)
+![1573652396669](docker.assets/1573652396669-1680855742749-1681633613167.png)
 
 
 
@@ -353,9 +353,9 @@ docker run -id --name=c_redis -p 6379:6379 redis:5.0
 
 ## 7.Dockerfile
 
-![image-20230407163407667](docker.assets/image-20230407163407667.png)
+![image-20230407163407667](docker.assets/image-20230407163407667-1681633613167.png)
 
-![image-20230407163918525](docker.assets/image-20230407163918525.png)
+![image-20230407163918525](docker.assets/image-20230407163918525-1681633613168.png)
 
 把容器转化为镜像==》创建一个新镜像
 
@@ -363,7 +363,7 @@ docker run -id --name=c_redis -p 6379:6379 redis:5.0
 docker images
 ```
 
-![image-20230407164900698](docker.assets/image-20230407164900698.png)
+![image-20230407164900698](docker.assets/image-20230407164900698-1681633613168.png)
 
 挂载tomcat上创建新镜像：
 
@@ -409,7 +409,7 @@ cd ./docker-files
 vi springboot-dockerfile
 ```
 
-![image-20230407221702638](docker.assets/image-20230407221702638.png)
+![image-20230407221702638](docker.assets/image-20230407221702638-1681633613168.png)
 
 接着运行文件生成镜像：
 
@@ -427,11 +427,11 @@ docker run -id -p 900:9000 +镜像名称
 
 ## 8.Docker服务编排
 
-![image-20230407200855709](docker.assets/image-20230407200855709.png)
+![image-20230407200855709](docker.assets/image-20230407200855709-1681633613168.png)
 
 ### 一.安装compose
 
-![image-20230411101818015](docker.assets/image-20230411101818015.png)
+![image-20230411101818015](docker.assets/image-20230411101818015-1681633613168.png)
 
 #### 1.安装Docker Compose
 
@@ -458,7 +458,7 @@ rm /usr/local/bin/docker-compose
   1. 服务（service）：一个个应用容器实例，比如订单微服务、库存微服务、mysql容器、nginx容器或者redis容器
   2. 工程（project）：由一组关联的应用容器组成发一个完整业务单元，在docker-compose.yml文件中定义。
 
-![image-20230411103455841](docker.assets/image-20230411103455841.png)
+![image-20230411103455841](docker.assets/image-20230411103455841-1681633613168.png)
 
 #### 4.compose使用的三个步骤
 
@@ -466,11 +466,11 @@ rm /usr/local/bin/docker-compose
 - 使用docker-compose.yml定义一个完整的业务单元，安排好整体应用中的各个容器服务。
 - 最后，执行docker-compose up命令来启动并运行整个应用程序，完成一键部署上线
 
-![image-20230411104020713](docker.assets/image-20230411104020713.png)
+![image-20230411104020713](docker.assets/image-20230411104020713-1681633613168.png)
 
 #### 5.compose常用命令
 
-![image-20230411104118615](docker.assets/image-20230411104118615.png)
+![image-20230411104118615](docker.assets/image-20230411104118615-1681633613168.png)
 
 
 
@@ -535,6 +535,18 @@ docker-compose up
 ```shell
 http://192.168.149.135/hello
 ```
+
+
+
+#### 7.Docker Compose
+
+编写compose.yml文件的细节：
+
+![image-20230416162544870](docker.assets/image-20230416162544870.png)
+
+模板可在官网上查询
+
+
 
 ## 9.Docker 私有仓库
 
